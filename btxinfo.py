@@ -6,7 +6,6 @@ header = {'Content-Type':  'application/json; charset=utf-8'}
 
 urlApi = 'http://bitcore.cc/api.php'
 
-
 response = requests.get(urlApi, headers=header)
 a = json.dumps(response.json())    # dump response to a as a string
 b = json.loads(a)              # decode json format b
