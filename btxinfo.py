@@ -58,4 +58,4 @@ print(f"    Mining: {float(btx_data['mining']):3.2f}  Marketing: {float(btx_data
 print(f"    Average last 24H: {bitcore['difficulty24']:3.2f} - Last 24 hours  Change/24 Hour : {change_percent:3.2f}%")
 print("*" * 74)
 
-input('\n                       -+-  key to continue  --+--')
+input('\n                       --+--  key to continue  --+--')

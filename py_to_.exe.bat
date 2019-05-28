@@ -9,13 +9,16 @@ cd C:\Python37\scripts
 
 echo 000 INFO: Mantronix is shuffeling the box of O and 1's.
 
-pyinstaller --onefile --clean --distpath C:\Users\gebruiker\Desktop\btx^
+pyinstaller --onefile --clean --distpath C:\Users\gebruiker\Desktop\infoBtx^
 	    --icon=C:\Users\gebruiker\Desktop\infoBtx\favicon.ico^
 	    --add-data=C:\Users\gebruiker\Desktop\infoBtx\favicon.ico;img^
  	    C:\Users\gebruiker\Desktop\infoBtx\btxinfo.py
 
-echo 99999 INFO: Moving to the Birthplace of this monster
-cd C:\Users\gebruiker\Desktop\btx
+echo 77777 INFO: Moving to the Birthplace of this monster
+cd C:\Users\gebruiker\Desktop\infoBtx
+
+echo 88888 INFO: Removing __pycache__
+rm -r __pycache__
 
 echo 99999 INFO: Testing if its realy works! 
 btxinfo.exe
