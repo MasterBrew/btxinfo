@@ -1,12 +1,24 @@
 import json
 import requests
+from requests.exceptions import HTTPError
 from pprint import *
+from time import sleep
 
 header = {'Content-Type':  'application/json; charset=utf-8'}
 
 urlApi = 'http://bitcore.cc/api.php'
 
-response = requests.get(urlApi, headers=header)
+try:
+    response = requests.get(urlApi, headers=header)
+    response.raise_for_status()
+except HTTPError as http_err:
+    print(f'HTTP error occurred: {http_err}')  # Python 3.6
+    sleep(10)
+    exit()
+except Exception as err:
+    print(f'Other error occurred: {err}')  # Python 3.6
+    exit()
+
 a = json.dumps(response.json())    # dump response to a as a string
 b = json.loads(a)              # decode json format b
 
@@ -16,7 +28,7 @@ btx_data = b["data"]
 urlApi = 'http://whattomine.com/coins.json'
 response = requests.get(urlApi, headers=header)
 a = json.dumps(response.json())    # dump response to a
-b = json.loads(a)              # decode json format b
+b = json.loads(a)                  # decode json format b
 
 coins = b["coins"]
 bitcore = (coins["Bitcore"])
@@ -29,7 +41,7 @@ response = requests.get(urlApi, headers=header)
 # String
 a = json.dumps(response.json())    # dump response to a
 # Dict
-b = json.loads(a)              # decode json format b
+b = json.loads(a)                  # decode json format b
 
 # print(type(a))
 # pprint(a)
@@ -54,7 +66,7 @@ print(f"           *  Current Difficulty: {algoDiff:3.2f}  NetHash: {netHash:3.2
 print(f"     Maximum: {coinCap['max_supply']}  Total: {coinCap['total_supply']}  Circulating: {coinCap['circulating_supply']}\n")
 print(f"     Airdrop: {float(btx_data['airdrop']):3.2f} Virtual Fork: {float(btx_data['vfork']):3.2f}  Claimed: {float(btx_data['claimed']):3.2f}")
 print(f"    Mining: {float(btx_data['mining']):3.2f}  Marketing: {float(btx_data['marketing']):3.2f}  Circulating: {float(btx_data['circulating']):3.2f}")
-print(f"    Average last 24H: {bitcore['difficulty24']:3.2f} - Last 24 hours  Change/24 Hour : {change_percent:3.2f}%")
+print(f"        Average last 24H: {bitcore['difficulty24']:3.2f}  Last 24 hours Change : {change_percent:3.2f}%")
 print("*" * 74)
 
 input('\n                       --+--  key to continue  --+--')
