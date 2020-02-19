@@ -20,6 +20,6 @@ cd C:\Users\gebruiker\Desktop\infoBtx
 echo 88888 INFO: Removing __pycache__
 rm -r __pycache__
 
-echo 99999 INFO: Testing if its realy works! 
+echo 99999 INFO: Testing if it realy works! 
 btxinfo.exe
 
