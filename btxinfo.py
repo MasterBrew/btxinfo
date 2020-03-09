@@ -66,8 +66,8 @@ b = json.loads(a)                  # decode json format b
 # pprint(b['data'])
 # pprint(b.keys())
 
-coinCap = b['data']
-coinPrice = coinCap['quotes']['USD']
+#coinCap = b['data']
+#coinPrice = coinCap['quotes']['USD']
 algoDiff = bitcore['difficulty']
 algoDiff24 = bitcore['difficulty24']
 change_percent = ((float(algoDiff) - algoDiff24) / algoDiff24) * 100
@@ -76,7 +76,7 @@ print("*" * 30 + " " +  version + " " +  "*" * 30)
 print()
 print(f"                   Bitcore core 17.0.0 at {coreProgress}    Algorithm: {bitcore['algorithm']}")
 print()
-print(f"              Price[{coinCap['symbol']}] ${coinPrice['price']:3.2f}     Rank: {coinCap['rank']}     Market_cap: {bitcore['market_cap']}")
+# print(f"              Price[{coinCap['symbol']}] ${coinPrice['price']:3.2f}     Rank: {coinCap['rank']}     Market_cap: {bitcore['market_cap']}")
 print()
 print(f"            Exchange rate: {round(bitcore['exchange_rate']*100000000)} satoshi     Exchange rate 24H: {round(bitcore['exchange_rate24']*100000000)} satoshi")
 print()
@@ -96,7 +96,7 @@ print(f"                     Block Time: {bitcore['block_time']} Sec.    Reward:
 print(f"                                  Block Reward -50% in {str(dtDelta.days)} days")
 # print("                             Block half Time!: " + ctime(1588957440))
 print()
-print(f" Don't panic! ${myBtx * coinPrice['price']:3.2f} ".center(86,'*'))
-
+# print(f" Don't panic! ${myBtx * coinPrice['price']:3.2f} ".center(86,'*'))
+print(f" Don't panic! ".center(88,'*'))
 
 input('\n                            --+--  key to continue  --+--')
