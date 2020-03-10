@@ -6,6 +6,7 @@ from time import ctime
 from datetime import datetime
 from datetime import timedelta
 
+
 version = 'Bitcore webscrapper V2.0.3'
 
 def coingeckoRanking():
